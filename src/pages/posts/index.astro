@@ -1,0 +1,15 @@
+---
+const response = await fetch("http://127.0.0.1:1337/api/posts");
+const { data } = await response.json();
+---
+
+<h1>The Blog</h1>
+
+{
+  data.map((post) => (
+    <>
+      <h2>{post.attributes.title}</h2>
+      <p>{post.attributes.body}</p>
+    </>
+  ))
+}
